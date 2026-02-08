@@ -7,7 +7,6 @@ const mensajeInput = document.getElementById('mensaje');
 const vistaMensaje = document.getElementById('vistaMensaje');
 const mensajeFinal = document.getElementById('mensajeFinal');
 
-
 const params = new URLSearchParams(window.location.search);
 const key = params.get('m');
 
@@ -22,13 +21,13 @@ if (key) {
 }
 
 btnComenzar.addEventListener('click', () => {
-
+  
   texto.classList.add('subir');
 
   btnComenzar.classList.add('oculto');
 
   modal.classList.add('activo');
-}); 
+});
 
 btnSalir.addEventListener('click', () => {
   modal.classList.remove('activo');
