@@ -44,6 +44,11 @@ body {
   z-index: 2;
 }
 
+.btn-comenzar.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Modal */
 .modal {
   position: fixed;
