@@ -7,6 +7,7 @@ const mensajeInput = document.getElementById('mensaje');
 const vistaMensaje = document.getElementById('vistaMensaje');
 const mensajeFinal = document.getElementById('mensajeFinal');
 
+
 const params = new URLSearchParams(window.location.search);
 const key = params.get('m');
 
@@ -21,12 +22,18 @@ if (key) {
 }
 
 btnComenzar.addEventListener('click', () => {
+
   texto.classList.add('subir');
+
+  btnComenzar.classList.add('oculto');
+
   modal.classList.add('activo');
-});
+}); 
 
 btnSalir.addEventListener('click', () => {
   modal.classList.remove('activo');
+
+  btnComenzar.classList.remove('oculto');
 });
 
 btnCopiar.addEventListener('click', () => {
@@ -42,5 +49,9 @@ btnCopiar.addEventListener('click', () => {
   const url = `${window.location.origin}${window.location.pathname}?m=${key}`;
   navigator.clipboard.writeText(url);
 
-  alert('ᴜʀʟ ᴄᴏᴘɪᴀᴅᴀ, ᴇɴᴠɪᴀʟᴀ ᴀ ᴇꜱᴀ ᴘᴇʀꜱᴏɴᴀ\nᴘᴏᴅʀᴀ ᴠᴇʀ ᴇʟ ᴍᴇɴꜱᴀᴊᴇ Qᴜᴇ ʟᴇ ᴇꜱᴄʀɪʙɪꜱᴛᴇ\n\nᴄᴏᴅɪɢᴏ --ꜰɪxx');
+  alert(
+    'ᴜʀʟ ᴄᴏᴘɪᴀᴅᴀ, ᴇɴᴠɪᴀʟᴀ ᴀ ᴇꜱᴀ ᴘᴇʀꜱᴏɴᴀ\n' +
+    'ᴘᴏᴅʀᴀ ᴠᴇʀ ᴇʟ ᴍᴇɴꜱᴀᴊᴇ Qᴜᴇ ʟᴇ ᴇꜱᴄʀɪʙɪꜱᴛᴇ\n\n' +
+    'ᴄᴏᴅɪɢᴏ --ꜰɪxx'
+  );
 });
