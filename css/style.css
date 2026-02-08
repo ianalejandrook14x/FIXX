@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  color: white;
+}
+
+/* Texto animado */
+.texto-centro {
+  position: absolute;
+  top: 37%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 28px;
+  white-space: nowrap;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.texto-centro.subir {
+  transform: translate(-50%, -210%);
+  opacity: 0.9;
+}
+
+/* Botón comenzar */
+.btn-comenzar {
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff4f7a;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+textarea {
+  width: 100%;
+  height: 130px;
+  resize: none;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.botones button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-salir {
+  background: #ddd;
+}
+
+.btn-url {
+  background: #ff4f7a;
+  color: white;
+}
+
+/* Vista mensaje secreto */
+.vista-mensaje {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.vista-mensaje h2 {
+  font-size: 26px;
+}
